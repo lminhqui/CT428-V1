@@ -1,0 +1,97 @@
+body {
+    background: gainsboro;
+}
+
+
+.edit--information {
+    background: white;
+    max-width: 700px;
+    height: 650px;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding: 30px 15px 20px 28px;
+    border-radius: 15px;
+
+}
+
+.form-group {
+    
+}
+
+.edit--information .form-group h4 {
+    margin-top: 30px;
+    font-size: 20px;
+
+}
+
+.edit--information .form-group h2 {
+    
+   font-weight: bolder;
+    font-size: 40px; 
+}
+
+.edit--information .Name-group .Name {
+
+    height: 40px;
+    border: 1px solid rgb(228, 229, 240);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 12px;
+    width: 95%;
+    
+}
+
+.edit--information .Name-group {
+    margin-top: 15px;
+
+}
+
+.edit--information .head {
+    margin-top: 25px;
+}
+
+.edit--information .Phone {
+    width: 90%;
+    height: 40px;
+    border: 1px solid rgb(228, 229, 240);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.edit--information .Emails {
+    width: 90%;
+    height: 40px;
+    border: 1px solid rgb(228, 229, 240);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.edit--information .container--row {
+    margin-top: 30px;
+}
+
+.edit--information .header {
+    font-size: 40px;
+    margin-top: 30px;
+    border-top: 1px solid rgb(228, 229, 240)  ;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+.edit--information .click--btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+.edit--information .btn {
+    background-color: blue;
+    color: white;
+    
+}

@@ -1,0 +1,41 @@
+extends ./blocks/nav.pug
+block content
+  link(rel="stylesheet", href="/css/admin/list-product.css")
+  .app-content
+    #main
+      .app-title
+        ul.app-breadcrumb.breadcrumb
+          li.breadcrumb-item  Thống kê
+          #time.ontime
+    
+      // <div class="row">
+      .tile
+        h3.tile-title Chi tiết hóa đơn
+        span#btn-handle-bill.btn.btn-primary.add--order(type='button')
+            | Xử lý đơn hàng
+        table.table.table-bordered.table-hover
+          thead.thead-light
+            tr
+              th(scope='col') ID
+              th(scope='col') Tên hàng hóa
+              th(scope='col') Số lượng
+              th(scope='col') Trạng thái
+          
+          tbody
+            each item in bill.products
+              tr  
+                td #{item.product.id}          
+                td #{item.product.name}
+                td #{item.quantity}
+                if(bill.status==0)
+                  td Chưa xử lý
+                if(bill.status==1)
+                  td Đang giao hàng
+                if(bill.status==2)
+                  td Đã giao hàng
+      // </div>
+  input(type="hidden" id = 'bill-id' value = `${bill.id}`)
+  
+  script(src="/js/admin/billdetail.js") 
+  
+

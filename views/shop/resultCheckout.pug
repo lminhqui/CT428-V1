@@ -1,0 +1,16 @@
+extends ../layouts/header_footer.pug
+block content
+    #notfound
+        .notfound
+            .notfound-404
+            h1 Oops!
+            h2 404 - Page not found
+            p
+            | The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+            a(href='#') Go To Homepage
+    if(status=="COMPLETED")
+        div 
+        |đơn hàng #{billid} của bạn đã thành công
+    else
+        div 
+            |đơn hàng #{billid} của bạn đã thất bại

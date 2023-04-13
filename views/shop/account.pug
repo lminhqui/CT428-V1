@@ -1,0 +1,50 @@
+extends ../layouts/header_footer.pug
+block content
+  link(rel="stylesheet", href="/css/shop/account.css")
+  .account--blur.hidden#blur_account
+  .container
+    .Account
+      .Account--inner
+        span#Account--navbar--icon.Account--navbar--icon
+          i.fas.fa-align-justify
+        .Account--navbar#Account--navbar
+          .Account--navbar--items
+            .items-info
+              .items-info_avatar
+                picture.avatar
+              .items-info_content
+                h6.info-content_lable Tài khoản:  
+                h5.info-content_name #{user.info.name}
+              //- span.close-account-navbar#close-account-navbar
+                i.fas.fa-times
+            .items-info-list
+              ul.items-info-container
+                a(href='/account')
+                  .info-items-active.info-items
+                    .info-item
+                      .item-icon
+                        i.fas.fa-user-circle
+                      .item-label-name Thông tin tài khoản
+                a.info-items(href='/account/Order')
+                  .info-item
+                    .item-icon
+                      i.far.fa-clipboard
+                    .item-label-name Quản lý đơn hàng
+        .Account-content
+          .main-label Thông tin tài khoản
+          .content-inner
+            .content-body
+              form(method='POST', action=`/account/update?id=${user.info.id}`).body-items#updateacc
+                .form-group.body-items-inner
+                  .form-input_lable Họ và tên
+                  input.form-input_input(type='text',name='name', value=`${user.info.name}`)
+                .body-items-inner
+                  .form-input_lable Email
+                  input.form-input_input(type='text',name='email', value=`${user.info.email}`)
+                .body-items-inner
+                  .form-input_lable Số điện thoại
+                  input.form-input_input(type='tel',name='number', value=`${user.info.number}`)
+                button(type="submit").form-submit Cập Nhật
+              .body-items-emty
+  script(src="/js/shop/account.js" type='module') 
+

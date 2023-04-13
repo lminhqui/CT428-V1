@@ -1,0 +1,34 @@
+extends ./blocks/nav.pug
+block content
+  .app-content
+    #main
+      .app-title
+        ul.app-breadcrumb.breadcrumb
+          li.breadcrumb-item  Danh sách
+          #time.ontime
+      // <div class="row">
+      .tile
+        h3.tile-title Danh sách khách hàng
+        table.table.table-bordered.table-hover
+          thead.thead-light
+            tr
+              th(scope='col')
+                .form-check
+                  input#flexCheckDefault.form-check-input(type='checkbox', value='')
+                  label.form-check-label(for='flexCheckDefault')
+              th(scope='col') Tên khách hàng
+              th(scope='col') Số điện thoại
+              th(scope='col') Email
+              th(scope='col') Tính năng
+          tbody
+            each user in users
+              tr
+                th(scope='row') #{user.id}
+                td #{user.name}
+                td #{user.number}
+                td #{user.email}
+                td.iconss
+                  i#btn-delete.fas.fa-trash-alt.icon--delete.backgrd
+                  a(href='add-customer.html')
+                    i.fas.fa-edit.backgrds
+      // </div>

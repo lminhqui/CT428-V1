@@ -1,0 +1,48 @@
+extends ../layouts/header_footer.pug
+block content
+
+  link(rel="stylesheet", href="/css/shop/Sign-in_up.css")
+  .signIU-body
+    #signIU-container(class=login?'signIU-container':'signIU-container right-panel-active')
+      .form-container-signIU.sign-up-container
+        form(action="/login/register", method="post" )#signUp-form.signIU-form
+          .signIU-title Đăng Kí
+          .social-container
+            .social-inner
+              a.social(href='#')
+                i.fab.fa-facebook-f
+            .social-inner
+              a.social(href='#')
+                i.fab.fa-google-plus-g
+          .signIU-subtitle or use your email for registration
+          input(type='text', placeholder='Tài Khoản' name='username')
+          input(type='password', placeholder='Mật Khẩu' name='password')
+          input(type='password', placeholder='Nhập Lại Mật Khẩu' name='rppassword')
+          button(type="submit").signIU-button Đăng Kí
+      .form-container-signIU.sign-in-container
+        form(action="/login", method="post" )#signIn-form.signIU-form
+          .signIU-title Đăng Nhập
+          .social-container
+            .social-inner
+              a.social(href='#')
+                i.fab.fa-facebook-f
+            .social-inner
+              a.social(href='#')
+                i.fab.fa-google-plus-g
+          .signIU-subtitle or use your account
+          input(type='text', name='username', placeholder='Tài Khoản')
+          input(type='password', name='password', placeholder='Mật Khẩu')
+          .signIU--forgotpass
+            a(href='#') Forgot your password?
+          button(type="submit").signIU-button Đăng Nhập
+      .overlay-container
+        .overlay
+          .overlay-panel.overlay-left
+            h1 Chào bạn!
+            .signIU-subslogan Bạn đã có tài khoản?
+            #signIn.signIU-button.ghost Đăng Nhập
+          .overlay-panel.overlay-right
+            h1 Chào bạn!
+            .signIU-subslogan Bạn chưa có tài khoản?
+            #signUp.signIU-button.ghost Đăng Kí
+  script(src="/js/shop/Sign-in_up.js" type='module') 

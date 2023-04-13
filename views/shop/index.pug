@@ -1,0 +1,120 @@
+extends ../layouts/header_footer.pug
+block content
+  link(rel="stylesheet", href="/css/shop/index.css")
+  marquee.marquee(behavior='', direction='')
+    img(height='50px', src='https://i.pinimg.com/280x280_RS/27/d3/05/27d3059ff10a0abcf5b10d6d7d1a8c8d.jpg',  loop='infinite')
+    | Chào Mừng Đến Với Cửa Hàng Của Chúng Tôi
+    img(height='50px', src='https://i.pinimg.com/280x280_RS/27/d3/05/27d3059ff10a0abcf5b10d6d7d1a8c8d.jpg', loop='infinite')
+    
+  .container
+    .banner
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638168984644073421_F-H1_800x300.jpg', alt='First slide')
+          .carousel-item
+            img.d-block.w-100(src='https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/9/638166607937152206_F-H1_800x300.png', alt='Second slide')
+          .carousel-item
+            img.d-block.w-100(src='https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/3/31/638158971439901826_F-H1_800x300.png', alt='Third slide')
+        a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+  .container.body-heading
+    section.text-container
+      h2.text-headline Sản phẩm nổi bật
+  .container
+    .show-card-tab-inner
+      .tab
+        ul.tab-list.col-12.col-lg-6
+          li.tab__item
+            a(style='color:black' href=`/?category=${productCategory[0].id}`) #{productCategory[0].name}
+          li.tab__item
+            a(style='color:black' href=`/?category=${productCategory[1].id}`) #{productCategory[1].name}
+          li.tab__item
+            a(style='color:black' href=`/?category=${productCategory[2].id}`) #{productCategory[2].name}
+          li.tab__item
+            a(style='color:black' href=`/?category=${productCategory[3].id}`) #{productCategory[3].name}
+  .container.highlight-product
+    .row
+      .col-lg-3.col-12
+        .row
+          .col-lg-12.col-6
+            .container-item
+              .dt-item-img
+                a(href=`product/show?id=${starproductsheader[1].id}`)
+                  span.dt-img
+                    img.img(src=starproductsheader[1].img[0], alt=`${starproductsheader[1].name}`)
+                .dt-info
+                  div
+                    a.dt-name(href=`product/show?id=${starproductsheader[1].id}`)
+                    | #{starproductsheader[1].name}
+          .col-lg-12.col-6
+            .container-item
+              .dt-item-img
+                a(href=`product/show?id=${starproductsheader[2].id}`)
+                  span.dt-img
+                    img.img(src=starproductsheader[2].img[0], alt=`${starproductsheader[2].name}`)
+                .dt-info
+                  div
+                    a.dt-name(href=`product/show?id=${starproductsheader[2].id}`)
+                    | #{starproductsheader[2].name}
+      .col-lg-6.col-12
+        .container-6
+          .dt-item
+            .dt-item-img
+              a(href=`product/show?id=${starproductsheader[0].id}`)
+                span.dt-img
+                  img.bimg(height='400px', src=starproductsheader[0].img[0], alt=starproductsheader[0].name)
+              .dt-info
+                div
+                  a.dt-name(href=`product/show?id=${starproductsheader[0].id}`)
+                  | #{starproductsheader[0].name}
+      .col-lg-3.col-12
+        .row
+          .col-lg-12.col-6
+            .container-item
+              .dt-item-img
+                a(href=`product/show?id=${starproductsheader[3].id}`)
+                  span.dt-img
+                    img.img.himg(src=starproductsheader[3].img[0], alt=`${starproductsheader[3].name}`)
+                .dt-info
+                  div
+                    a.dt-name(href=`product/show?id=${starproductsheader[3].id}`)
+                    | #{starproductsheader[3].name}
+          .col-lg-12.col-6
+            .container-item
+              .dt-item-img
+                a(href=`product/show?id=${starproductsheader[4].id}`)
+                  span.dt-img
+                    img.img(src=starproductsheader[4].img[0], alt=`${starproductsheader[4].name}`)
+                .dt-info
+                  div
+                    a.dt-name(href=`product/show?id=${starproductsheader[4].id}`)
+                    | #{starproductsheader[4].name}
+  .container
+    each starproduct in starproducts
+      .list1
+        .headdt-lable
+          h3 #{starproduct.category.name}
+          a.full-view(style='text-decoration: none', href=`/product?category=${starproduct.category.id}`) Xem t&#x1EA5;t c&#x1EA3;
+        .list1-item
+          each item in starproduct.tempproducts
+            .col-6.col-lg-3
+              .dt-row-item
+                .dt-item-img
+                  a(href=href=`product/show?id=${item.id}`)
+                    span.dt-img
+                      img(height='200px', src=item.img[0], alt=item.name).mximg
+                .dt-info
+                  h4
+                    a.dt-name(href=`product/show?id=${item.id}`)
+                    | #{item.name}
+                  .dt-price
+                    .price #{item.price}
