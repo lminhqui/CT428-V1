@@ -69,7 +69,7 @@ class CardController extends Controller {
             application_context: {
                 return_url: successUrl,
                 cancel_url: cancleUrl,
-                brand_name: 'KTQ SHOP',
+                brand_name: 'QHT SHOP',
                 landing_page: 'BILLING',
                 user_action: 'CONTINUE',
             },
