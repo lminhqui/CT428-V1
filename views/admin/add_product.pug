@@ -1,0 +1,69 @@
+extends ./blocks/nav.pug
+block content
+  link(rel="stylesheet", href="/css/admin/add_product.css")
+  .app-content
+    #main
+      .app-title
+        ul.app-breadcrumb.breadcrumb
+          li.breadcrumb-item Danh sách sản phẩm
+          li.breadcrumb-item
+            a(href='#') Thêm sản phẩm
+      .row
+        .col-md-12
+          .tile
+            h3.tile-title Tạo mới sản phẩm
+            form(action='/admin/product/create', method='post' enctype='multipart/form-data')
+              .row
+                .col-md-4
+                  label.control-label Tên sản phẩm 
+                  input.form-control(name='name', type='text', placeholder='')
+                                
+                .col-md-4
+                  label.control-label Tình trạng
+                  select.form-control(name='status')
+                    option -- Chọn tình trạng --
+                    option(value=1) Còn hàng
+                    option(value=2) Hết hàng
+                .col-md-4
+                  label.control-label Loại sản phẩm
+                  select.form-control(name='category' id='selected-category')
+                    each item in product_category
+                      option(value=`${item.id}` ) #{item.name} 
+                  br
+                  span.btn.btn-success#btn-add-category Thêm 
+                  span.btn.btn-warning#btn-change-category Sửa
+                  span.btn.btn-danger#btn-delete-category Xóa
+                .col-md-4
+                  label.control-label Nhà Cung Cấp
+                  select.form-control(name='provider' id='selected-provider')
+                    each item in product_provider
+                      option(value=`${item.id}` ) #{item.name} 
+                  br
+                  span.btn.btn-success#btn-add-provider Thêm
+                  span.btn.btn-warning#btn-change-provider Sửa
+                  span.btn.btn-danger#btn-delete-provider Xóa
+                .col-md-4
+                  label.control-label Giá bán
+                  input.form-control(name='price', type='text')
+              br        
+              .picture
+                .control-label
+                  h3 Ảnh sản phẩm
+                label#avatar_lb(for='avatar')
+                  span
+                    | Chọn ảnh để up 
+                    i.fas.fa-cloud-upload-alt
+                input#avatar(type='file', value='', name='img',  accept='image/png, image/jpeg', multiple)
+                #img_list
+              // motasanpham
+              .row
+                .col-md-12
+                  .form-group
+                    label.control-label Mô tả sản phẩm
+                    textarea.form-control-des(name='description', type='text', id='', cols='30', rows='10')
+              br
+              .buton
+                button.btn.btn-outline-success(type='submit') Lưu lại
+                a.btn.btn-outline-danger(href='/admin/prodcut') Hủy bỏ
+  script(type='module',src="/js/admin/add_product.js") 
+  

@@ -1,0 +1,45 @@
+
+extends ../layouts/header_footer.pug
+block content
+  link(rel="stylesheet", href="/css/shop/cart.css")
+  .shopping-cart
+    .main-product-cart
+      .wrap-inner-cart
+        .cart
+          .cart-inner
+            .product-inner
+              h4.product-title Giỏ hàng
+              .product-heading
+                .row
+                  .product-cart-item-1
+                    .checkbox-product-all
+                  .product-cart-item-2 Đơn giá
+                  .product-cart-item-3 Số lượng
+                  .product-cart-item-4 Thành tiền
+                  .product-cart-item-5
+                    i.far.fa-trash-alt.remove(onclick='removeAllCart()')
+            .product-scroller(style='height: auto; overflow-y: hidden;')
+              .product-content
+                .product-content-inner
+                  .seller-container
+                    .seller#seller
+          .cart-total-price
+            .total-inner
+              .total-price
+                ul.total-price-item
+                  li.price-item
+                    span.prices-text Tạm tính
+                    span.prices-value-before#prices-value-before 0đ
+                     
+                  li.price-item
+                    span.prices-text Giảm giá
+                    span.prices-value-discount#prices-value-discount 0đ
+                     
+                .price-tt
+                  span.prices-text Tổng cộng
+                  .prices-content
+                    span.prices-value-final#prices-value-final 0đ
+                    span.prices-value-note (Đã bao gồm VAT nếu có)
+            form#checkout_form(action="/cart/checkout", method="post")
+              button(type='submit').cart-submit-button Mua Hàng (1)
+  script(src="/js/shop/cart.js") 

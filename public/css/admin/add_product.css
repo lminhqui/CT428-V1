@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Scheherazade+New&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app-content {
+    min-height: 100vh;
+    /* padding: 10px; */
+    background-color: #f5f5f5;
+}
+
+.app-title {
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px 30px;
+    border-left: 6px solid #ffd43b;
+    margin-bottom: 20px;
+    /* margin-left: 300px; */
+    height: 55px;
+}
+
+.app-breadcrumb {
+    margin-bottom: 0;
+    text-align: right;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0;
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.app-breadcrumb a {
+    text-decoration: none;
+    color: black;
+    padding-left: 9px;
+}
+
+.breadcrumb {
+    display: flex;
+    /* padding: 5px; */
+    list-style: none;
+    background-color: #fff !important;
+    border-radius: 3;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    color: #6c757d;
+    content: '/';
+    padding-left: 12px;
+}
+
+.tile {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    /* margin-left: 300px; */
+    border-left: 6px solid #ffd43b;
+}
+
+.tile .tile-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 4px solid #ffd43b;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    color: black;
+}
+
+.element-button {
+    display: flex;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #6c757d;
+}
+
+.btn-primary {
+    /* background-color: #9df99d; */
+}
+
+.form-group {
+    margin-bottom: 10px;
+    height: 100px;
+    /* background-color: aqua; */
+    width: 100%;
+}
+
+.control-label {
+    font-weight: 600;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 2;
+    color: black;
+    background-color: #f1f1f1;
+    min-height: 45px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(0, 28, 64);
+}
+
+#avatar {
+    display: none;
+}
+#avatar_lb {
+    font-weight: bold;
+    font-size: larger;
+    background-color: gainsboro;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#avatar_lb:hover {
+    background-color: rgb(182, 179, 179);
+    cursor: pointer;
+}
+
+.form-control-des {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 20px;
+    line-height: 2;
+    color: black;
+    background-color: #f1f1f1;
+    height: 85px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+}
+
+.form-control-des:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(0, 28, 64);
+    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+}
+
+.buton {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+.INPUT {
+    height: 45px;
+    /* margin: 10px; */
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border: 1px solid #dadada;
+    width: 100%;
+}
+
+.INPUT:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #495057;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.modal--title {
+    font-weight: 600;
+    color: black;
+    margin: 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 10px;
+}
+
+.button-btn {
+    margin-left: 17px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.add--order {
+    margin-bottom: 20px;
+}
+
+.hover-pointer {
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.iconss {
+    max-width: 140px;
+    width: 140px;
+}

@@ -1,0 +1,93 @@
+extends ../layouts/header_footer.pug
+block content
+  link(rel='stylesheet', href='/css/shop/productdetail.css')
+  .pd-wrap
+    .container
+      .heading-section
+      .row
+        .col-md-6
+          #slider.product-slider
+            .item
+              img#product-img(src=`${product.img[0]}` style='width:100%')
+          .product-thumb
+            each img in product.img
+              .item
+                img.product-img-item(src=`${img}`)
+        .col-md-6
+          .product-dtl
+            .product-info
+              .product-name #{product.name}
+              input(type="hidden" id = 'product_id' value=`${product.id}`)
+              .reviews-counter
+                .brand-name
+  
+                  | Loại sản phẩm: 
+                  a(href=`/product?category=${product.category.id}`) #{product.category.name}
+                  span.columm
+                  |  NSX: 
+                  a(href=`/product?provider=${product.provider.id}`) #{product.provider.name}
+                .rate
+                  input#star5(type='radio', name='rate', value='5', checked='')
+                  label(for='star5', title='text') 5 stars
+                  input#star4(type='radio', name='rate', value='4', checked='')
+                  label(for='star4', title='text') 4 stars
+                  input#star3(type='radio', name='rate', value='3', checked='')
+                  label(for='star3', title='text') 3 stars
+                  input#star2(type='radio', name='rate', value='2')
+                  label(for='star2', title='text') 2 stars
+                  input#star1(type='radio', name='rate', value='1')
+                  label(for='star1', title='text') 1 star
+              .product-price-discount
+                span #{product.price} 
+                span  vnd
+                //- span.line-through $29.00
+            .break-row
+              p
+                | #{product.description}
+            .product-count
+              //- label(for='size') Quantity
+              //- form.display-flex(action='#')
+              //-   .qtyminus -
+              //-   input.qty(type='text', name='quantity', value='1')
+              //-   .qtyplus +
+              span.round-white-btn#buynow_btn Mua Ngay
+              span.round-black-btn#addtocart_btn Thêm vào giỏ hàng
+      .product-info-tabs
+        ul#myTab.nav.nav-tabs(role='tablist')
+          li.nav-item
+            a#description-tab.nav-link.active(data-toggle='tab', href='#description', role='tab', aria-controls='description', aria-selected='true') Description
+          li.nav-item
+            a#review-tab.nav-link(data-toggle='tab', href='#review', role='tab', aria-controls='review', aria-selected='false') Reviews (0)
+        #myTabContent.tab-content
+          #description.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='description-tab')
+            | #{product.description}
+          #review.tab-pane.fade(role='tabpanel', aria-labelledby='review-tab')
+            .review-heading REVIEWS
+            p.mb-20 There are no reviews yet.
+            form.review-form
+              .form-group
+                label Your rating
+                .reviews-counter
+                  .rate
+                    input#star5(type='radio', name='rate', value='5')
+                    label(for='star5', title='text') 5 stars
+                    input#star4(type='radio', name='rate', value='4')
+                    label(for='star4', title='text') 4 stars
+                    input#star3(type='radio', name='rate', value='3')
+                    label(for='star3', title='text') 3 stars
+                    input#star2(type='radio', name='rate', value='2')
+                    label(for='star2', title='text') 2 stars
+                    input#star1(type='radio', name='rate', value='1')
+                    label(for='star1', title='text') 1 star
+              .form-group
+                label Your message
+                textarea.form-control(rows='10')
+              .row
+                .col-md-6
+                  .form-group
+                    input.form-control(type='text', name='', placeholder='Name*')
+                .col-md-6
+                  .form-group
+                    input.form-control(type='text', name='', placeholder='Email Id*')
+              button.round-blacks-btn Submit Review
+  script(src="/js/shop/productdetail.js") 

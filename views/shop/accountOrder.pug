@@ -1,0 +1,70 @@
+extends ../layouts/header_footer.pug
+block content
+  link(rel="stylesheet", href="/css/shop/accountOrder.css")
+  div
+    .Account
+      .Account--inner
+        .Account--navbar
+          .Account--navbar--items
+            .items-info
+              .items-info_avatar
+                picture.avatar
+              .items-info_content
+                h6.info-content_lable Tài khoản:
+                h5.info-content_name #{user.info.name}
+            .items-info-list
+              ul.items-info-container
+                a.info-items(href='/account')
+                  .info-item
+                    .item-icon
+                      i.fas.fa-user-circle
+                    .item-label-name Thông tin tài khoản
+                a.info-items(href='/account/Order')
+                  .info-item.info-items-active
+                    .item-icon
+                      i.far.fa-clipboard
+                    .item-label-name Quản lý đơn hàng
+        .Account-content
+          .Account-content_heading
+            h5.Account-content_title Quản lý đơn hàng
+            .Account-content-btn-list
+              //- .btn-wpm Ch&#x1EDD; thanh to&aacute;n
+              //- .btn-wfd Ch&#x1EDD; giao h&agrave;ng
+              //- .btn-done.content_btn__active &Dstrok;&atilde; ho&agrave;n th&agrave;nh
+          .Order-inner
+            .order-body
+            if(!Orders[0]['product']['img'][0])
+              .order-body-emty
+                .body-emty__icon
+                  span.not-have ?
+                  i.fas.fa-search.emty__icon
+                .body-emty-title
+                  | Bạn không có đơn hàng nào
+            if(Orders[0]['product']['img'][0])
+              .order-body-has
+                .order-body-inner
+                  .order-body-cart
+                    .order-cart-items
+                      .order-cart-items_heading
+                        .items_headding.order-id Mã đơn hàng
+                        .items_headding.order-date Ngày mua
+                        .items_headding.order-product Sản phẩm
+                        .items_headding.order-total Tổng tiền (đ)
+                        .items_headding.order-status Trạng thái
+              each bill in bills
+                each Order in bill.products
+                  .order-cart-items_content
+                    .items_content.order-item-id #{bill._id}
+                    .items_content.content-date #{bill.date}
+                    .items_content.order-name
+                      | #{Order.product.name}
+                    .items_content.order-content-items
+                      span.order-final-price #{Order.product.price * Order.quantity}
+                    .items_content.order-content-items
+                      if(bill.status==2)
+                        .order-status-items.status-succes  Đã giao hàng
+                      if(bill.status==1)
+                        .order-status-items.status-cancel  Đang giao hàng
+                      if(bill.status==0)
+                        .order-status-items.status-cancel  Chưa xử lý
+  script(src="/js/shop/account.js") 

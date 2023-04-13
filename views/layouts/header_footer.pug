@@ -1,0 +1,170 @@
+doctype html
+head
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', integrity='sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==', crossorigin='anonymous', referrerpolicy='no-referrer')
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+  link(rel='stylesheet', href='/css/shop/header_footer.css')
+
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Shop QHT
+body
+  //- facebook chat
+  #fb-root
+  #fb-customer-chat.fb-customerchat
+  //- end facebook chat
+  //- modal
+  link(rel="stylesheet", href="/css/shop/modal.css")
+  #Modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#ModalLabel.modal-title Modal title
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            #modalMsg.modal-body
+            .modal-footer
+                button.btn.btn-danger#closemodal(type='button', data-dismiss='modal') Đóng
+  
+  //- modal
+  //- header
+  .header
+    .header--top
+      .container.header--top--inner
+        if(user)
+          a.header--top--item(href='/logout')
+            
+            span.icon-text Đăng xuất
+        else
+          a.header--top--item(href='/login')
+           
+            span.icon-text Đăng nhập
+    .header--bottom
+      .container.header--bottom--inner
+        .row
+          .bottom--inner--left.col-2
+            a.brand(href='/')
+              img.img(height='80px', src='data:image/png;base64,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', alt='')
+              span QHT
+          .bottom--inner--center.col-8.col-lg-4
+            input.form-control(id='search_input', type='text', placeholder='Tìm thiết bị ...')
+            span.search_btn#search_btn
+              i.fas.fa-search
+          .phone-menu-container.col-2
+            i.fas.fa-align-justify#phone-menu
+          .col-12.col-lg-6#phone-menu-data
+            .bottom--inner--right
+              a.inner--right--item(href='https://huugunn1047.github.io/shopQHT/?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo')
+                i.fas.fa-tag.icon
+                .icon-text Liên hệ
+              a.inner--right--item(href='/account/Order')
+                i.far.fa-clipboard.icon
+                .icon-text Đơn hàng
+              //- a.inner--right--item(href='#')
+              //-   i.far.fa-bell.icon
+              //-   .icon-text Thông báo
+              a.inner--right--item(href='/account')
+                i.fas.fa-user-circle.icon
+                .icon-text Tài khoản
+              a.inner--right--item(href='/cart')
+                i.fas.fa-shopping-cart.icon
+                .icon-text Giỏ hàng      
+            
+  //-end header
+  //- content
+  block content
+  //- end content
+  //- footer
+  .container-fluid.bg-newletter.wow.fadeInUp
+    .container.newletter
+      .row
+        .col-xl-7.col-lg-6.col-md-6.col-sm-12.newletter-title
+          i.fa.fa-sign-in
+          span Shop QHT - Chuyên bán điện thoại thông minh và hiện đại nhất hiện nay.
+        //- .col-xl-5.col-lg-6.col-md-6.col-sm-12.newletter-content
+        //-   input(type='email', placeholder='Your email address')
+        //-   button Xác Nhận
+  .container.footer.wow.fadeInUp
+    .row
+      .col-xl-3.col-lg-3.col-md-12.col-sm-12.col-xs-12.footer-column.about-ft
+        .ttfooter-logo
+          a(href='/')
+            img(src='data:image/png;base64,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' height='50px', alt='footer-logo')
+        .ttfooter-desc Shop QHT - Chuyên bán điện thoại thông minh và hiện đại nhất hiện nay.
+      .col-xl-3.col-lg-3.col-md-4.col-sm-3.col-xs-6.footer-column.footer-extras
+        h5.list-title Ưu đãi
+        ul.list-unstyled
+          li
+            a(href='#') Trung tâm bảo hành
+          li
+            a(href='#') Thanh toán online
+          li
+            a(href='#') Dịch vụ sữa chữa
+          li
+            a(href='#') Hướng dẫn đặt hàng
+
+      .col-sm-3.col-lg-3.col-md-4.col-sm-4.col-xs-6.footer-column.footer-my-account
+        h5.list-title Thông tin
+        ul.list-unstyled
+          li
+            a(href='/account') Tài khoản
+          li
+            a(href='/account/order') Lịch sử đơn
+
+      .col-xl-3.col-lg-3.col-md-4.col-sm-5.col-xs-6.footer-column.footer-store-info
+        h5.list-title Thông tin chúng tôi
+        ul.list-unstyled
+          li.contact-detail
+            .data.address
+              i.fa.fa-map-marker
+              .contact-address
+                | QHT
+                br
+                | Việt Nam
+          li.contact
+            .data.contact
+              i.fa.fa-phone
+              span.phone
+                a(href='#') 0123456789
+          li.fax
+            .data.fax
+              i.fa.fa-fax
+              span.fax-address
+                a(href='#') 0123-456-7890
+          li.email
+            .data.email
+              i.fa.fa-envelope
+              span.email-address
+                a(href='mailto:demo@gmail.com') demo@gmail.com
+  .footer-bottom.wow.fadeInUp
+    .container
+      .footer-bottom-link
+        p
+          | Lập Trình Web - CT428 - 2023 
+          span  Quí - Hữu - Tạo
+      //- .follow
+      //-   ul.list-unstyled
+      //-     li.facebook
+      //-       a._blank(title='Facebook', href='#', target='_blank')
+      //-         i.fa.fa-facebook
+      //-     li.twitter
+      //-       a._blank(title='Twitter', href='#', target='_blank')
+      //-         i.fa.fa-twitter
+      //-     li.rss
+      //-       a._blank(title='RSS', href='#', target='_blank')
+      //-         i.fa.fa-rss
+      //-     li.google-plus
+      //-       a._blank(title='Google Plus', rel='publisher', href='#', target='_blank')
+      //-         i.fa.fa-google-plus
+      //-     li.instagram
+      //-       a._blank(title='instagram', rel='publisher', href='#', target='_blank')
+      //-         i.fa.fa-instagram(aria-hidden='true')
+  #goToTop.goToTop.ttbox-img(title='Top', style='display: block;' href="#")
+
+  script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+  script(src='https://kit.fontawesome.com/3405ce9d87.js', crossorigin='anonymous')
+  script(src="/js/shop/header_footer.js") 
+  //- end footer

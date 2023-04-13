@@ -1,0 +1,45 @@
+extends ./blocks/nav.pug
+block content
+  link(rel="stylesheet", href="/css/admin/list-product.css")
+  .app-content
+    #main
+      .app-title
+        ul.app-breadcrumb.breadcrumb
+          li.breadcrumb-item  Thống kê
+          #time.ontime
+      // <div class="row">
+      .tile
+        h3.tile-title Danh Sách Hàng Hóa
+        a(href='/admin/product/create')
+          button.btn.btn-primary.add--order(type='button')
+            | Thêm Hàng Hóa
+        table.table.table-bordered.table-hover
+          thead.thead-light
+            tr
+           
+              th(scope='col') ID
+              th(scope='col') Tên nhà sản xuất
+              th(scope='col') Tên sản phẩm
+              th(scope='col') Loại sản phẩm
+              th(scope='col') Trạng thái
+              th(scope='col') Tính năng
+          tbody
+            each item in products
+              tr            
+                td #{item.id}
+                td #{item.provider.name}
+                td #{item.name}
+                td #{item.category.name}
+                if(item.status==1)
+                  td Còn hàng
+                if(item.status==2)
+                  td Hết hàng
+                td
+                  span(class='btn-delete-product' data-id=`${item.id}` href=`/admin/product/delete?id=${item.id}`)
+                    i(data-id=`${item.id}`).fas.fa-trash-alt.icon--delete.backgrd
+                  a(href=`/admin/product/edit?id=${item.id}`)
+                    i.fas.fa-edit.backgrds
+      // </div>
+  script(src="/js/admin/product.js") 
+  
+

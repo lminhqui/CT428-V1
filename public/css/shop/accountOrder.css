@@ -1,0 +1,332 @@
+.Account {
+    margin: 16px auto;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1264px;
+    min-height: 77vh;
+    background-color: rgb(241, 240, 241);
+}
+.Account .Account--inner {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    flex-wrap: wrap;
+    display: flex;
+    padding-top: 15px;
+}
+.Account .Account--navbar--icon {
+    display: none;
+}
+.Account .Account--navbar {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    width: 20%;
+    padding-right: 10px;
+}
+.Account .items-info {
+    display: flex;
+}
+.Account .items-info_avatar {
+    height: 60px;
+    width: 60px;
+    background-color: black;
+}
+.Account .items-info_content {
+    padding-left: 10px;
+}
+.Account .items-info-container {
+}
+.Account .info-items {
+    color: #1435c3;
+}
+.info-items-active {
+    color: orangered !important;
+}
+.info-items:hover {
+    color: #1435c3;
+}
+.Account .info-item {
+    display: flex;
+    margin-bottom: 18px;
+    align-items: center;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.Account .item-icon {
+    min-width: 50px;
+    font-size: 35px;
+    text-align: center;
+}
+.Account .item-label-name {
+    font-size: 17px;
+}
+.Account .info-content_lable {
+    width: 100%;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+.Account .items-info-list {
+    margin-top: 20px;
+}
+.Account .Account-content {
+    width: 80%;
+}
+.Account .body-items {
+    width: 50%;
+    box-sizing: border-box;
+}
+.Account .form-input_lable {
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.Account .form-input_input {
+    display: flex;
+    width: 100%;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid rgb(224, 224, 224);
+    min-height: 16px;
+}
+
+.Account .body-items-inner {
+    margin-bottom: 10px;
+}
+.Account .gender-lable {
+    font-size: 18px;
+    margin-right: 60px;
+}
+.Account .gender-title {
+    padding-left: 2px;
+    font-size: 18px;
+}
+.Account .form-submit {
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 17px 15px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(20, 53, 195);
+    border-color: rgb(20, 53, 195);
+    color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.Account .content-body {
+    padding: 16px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+.Account .Account-content_heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+    align-items: center;
+}
+.Account .Account-content_title {
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+}
+.Account .Account-content-btn-list {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    line-height: 18px;
+    font-size: 18px;
+    align-items: center;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 5px;
+}
+
+.Account .btn-wpm {
+    padding: 10px;
+}
+.btn-wpm:hover {
+    color: rgb(20, 53, 195);
+    transition-duration: 0.1s;
+    background: #f9f9f9;
+}
+.Account .btn-wfd {
+    padding: 10px;
+}
+.btn-wfd:hover {
+    color: rgb(20, 53, 195);
+    transition-duration: 0.1s;
+    background: #f9f9f9;
+}
+.Account .btn-done {
+    padding: 10px;
+}
+.btn-done:hover {
+    color: rgb(20, 53, 195);
+    transition-duration: 0.1s;
+    background: #f9f9f9;
+}
+.Account .content_btn__active {
+    color: rgb(20, 53, 195);
+    background: #f9f9f9;
+}
+.Account .order-body-emty {
+    display: block;
+    margin-top: 80px;
+    text-align: center;
+}
+.Account .body-emty__icon {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+.Account .not-have {
+    font-size: 90px;
+    position: relative;
+    left: -15px;
+    top: 7px;
+    color: #d2d2d2;
+}
+.Account .emty__icon {
+    position: absolute;
+    left: 795px;
+    height: 200px;
+    width: 200px;
+    font-size: 195px;
+    color: #d2d2d2;
+}
+.Account .Order-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 70vh;
+}
+.Account .order-body {
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    margin-bottom: 16px;
+}
+.Account .order-cart-items {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 5px;
+}
+.Account .order-cart-items_heading {
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+}
+.Account .items_headding {
+    box-sizing: border-box;
+    padding: 16px 16px;
+    min-width: 140px;
+    font-weight: 700;
+}
+.Account .order-date {
+    text-align: left;
+    max-width: 204px;
+    width: 100%;
+}
+.Account .order-product {
+    text-align: left;
+    max-width: 355px;
+    width: 100%;
+}
+.Account .order-total {
+    text-align: right;
+    max-width: 130px;
+    width: 100%;
+}
+.Account .order-status {
+    text-align: right;
+    max-width: 158px;
+    width: 100%;
+}
+.Account .order-cart-items_content {
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    border-top: 1px solid;
+}
+.Account .items_content {
+    padding: 16px 16px;
+    font-size: 14px;
+}
+.Account .content-date {
+    text-align: left;
+    max-width: 204px;
+    width: 100%;
+}
+.Account .order-item-id {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Account .id-item-order {
+    color: rgb(4, 127, 255);
+    justify-content: left;
+}
+.id-item-order:hover {
+    color: #0d6efd;
+}
+.Account .order-name {
+    text-align: left;
+    max-width: 355px;
+    width: 100%;
+}
+.Account .order-final-price {
+    text-align: right;
+    max-width: 130px;
+    width: 100%;
+}
+.Account .order-content-items {
+    text-align: right;
+    max-width: 158px;
+    width: 100%;
+}
+.Account .order-content-items .status-succes {
+    color: rgb(83, 195, 5);
+}
+.Account .order-content-items .status-cancel {
+    color: rgb(218, 67, 67);
+}
+.body-emty-title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+}
+.Account .not-have {
+    font-size: 90px;
+    position: relative;
+    left: -29px;
+    top: -191%;
+    color: #d2d2d2;
+}
+.Account .emty__icon {
+    position: absolute;
+    left: 934px;
+    height: 200px;
+    width: 200px;
+    font-size: 195px;
+    color: #d2d2d2;
+    top: 279px;
+}
+.Account .Order-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+}
